@@ -1,0 +1,20 @@
+body {
+    background-image: radial-gradient(rgb(116, 255, 255), rgb(126, 51, 126));;
+    text-align: center; 
+}
+
+h1{
+    font: 100px bold sans-serif;
+    border: 10px solid rgb(82, 19, 82);
+    padding: 30px;
+    color: rgb(10, 10, 100);
+}
+
+h3{
+    font: 75px 'Times New Roman', Times, serif;
+    color: rgba(252, 9, 9, 0.719);
+}
+
+p{
+    font: 50px 'Times New Roman', Times, serif;  
+}
