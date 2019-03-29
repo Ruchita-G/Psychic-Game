@@ -15,6 +15,11 @@ h3{
     color: rgba(252, 9, 9, 0.719);
 }
 
+h4 {
+    font: 40px italic sans-serif;
+    color: rgb(2, 82, 2)
+}
+
 p{
     font: 50px 'Times New Roman', Times, serif;  
 }
