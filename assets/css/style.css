@@ -4,22 +4,23 @@ body {
 }
 
 h1{
-    font: 100px bold sans-serif;
+    font: 75px bold sans-serif;
     border: 10px solid rgb(82, 19, 82);
     padding: 30px;
     color: rgb(10, 10, 100);
 }
 
 h3{
-    font: 75px 'Times New Roman', Times, serif;
+    font: 50px 'Times New Roman', Times, serif;
     color: rgba(252, 9, 9, 0.719);
 }
 
 h4 {
     font: 40px italic sans-serif;
-    color: rgb(2, 82, 2)
 }
 
 p{
-    font: 50px 'Times New Roman', Times, serif;  
+    font: 30px 'Times New Roman', Times, serif; 
+    color: rgb(2, 82, 2)
+ 
 }
