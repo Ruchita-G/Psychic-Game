@@ -1,5 +1,3 @@
-var computerGuess = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-
 var wins = 0;
 var losses = 0;
 var guesses = 10;
@@ -25,40 +23,42 @@ var setandreset = function () {
   userGuessText.textContent = "Your Guesses so far: " + userPickSoFar.join("  ");
 }
 
-setandreset()
+
+var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
+var computerPick = options[Math.floor(Math.random() * options.length)];
+console.log("cp " + computerPick);
 
 document.onkeyup = function (event) {
+  var userPick = event.key.toLowerCase();
 
-  if (guesses > 1) {
+  console.log(userPick);
 
-    var computerPick = computerGuess[Math.floor(Math.random() * computerGuess.length)];
-    console.log(computerPick);
-
-    var userPick = event.key;
-    console.log(userPick.toLowerCase());
+  if ((guesses > 0) && (options.indexOf(userPick) > -1) && (userPickSoFar.indexOf(userPick) <= -1)) {
 
     if (userPick === computerPick) {
+      userPickSoFar = [];
       wins++
       guesses = 10;
-      userPickSoFar = [];
-
+      computerPick = options[Math.floor(Math.random() * options.length)];
+      console.log("cp " + computerPick);
     } else {
       guesses--
     }
-
-  } else {
-    losses++
-    guesses = 10;
-    userPickSoFar = [];
-
+    
   }
-
+  else if (userPickSoFar.indexOf(userPick) > -1) {
+    return alert("You have already selected this letter!")
+  }
+  else if (options.indexOf(userPick) <= -1) {
+    return alert("Please select a letter from the keyboard.")
+  }
+  else {
+    userPickSoFar = [];
+    losses++;
+    guesses = 10;
+    computerPick = options[Math.floor(Math.random() * options.length)];
+    console.log("cp " + computerPick);
+  }
   userPickSoFar.push(userPick);
-
-  // winsText.textContent = "Wins: " + wins;
-  // lossesText.textContent = "Losses: " + losses;
-  // guessesText.textContent = "Guesses Left: " + guesses;
-  // userGuessText.textContent = "Your Guesses so far: " + userPickSoFar.join("  ");
-
   setandreset();
 }
